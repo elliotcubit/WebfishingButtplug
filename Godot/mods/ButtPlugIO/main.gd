@@ -1,17 +1,66 @@
 extends Node
 
+const MOD_ID = "ButtPlugIO"
+
+var config: Dictionary
+var default_config: Dictionary = {
+	"enabled": true,
+	"websocket_url": "ws://127.0.0.1:12345"
+}
+
+onready var TackleBox := $"/root/TackleBox"
+
 var Client = preload("./lib/ButtplugClient.gd")
 var client = Client.new()
 var strength = 0;
 var device = "startingval"
 var goodToGo = false
 
+func _init_config():
+	var saved_config = TackleBox.get_mod_config(MOD_ID)
+	
+	for key in saved_config:
+		if not default_config.has(key):
+			saved_config.erase(key)
+
+	for key in default_config.keys():
+		if not saved_config.has(key):
+			saved_config[key] = default_config[key]
+
+	config = saved_config
+
+	TackleBox.set_mod_config(MOD_ID, config)
+
+func _on_config_update(mod_id: String, new_config: Dictionary):
+	if mod_id != MOD_ID:
+		return
+
+	if not config["enabled"] and new_config["enabled"]:
+		client._disconnect()
+		client = Client.new()
+		add_child(client)
+		client.connect("device_found", self, "_set_device")
+		client.connect("device_removed", self, "_unset_device")
+		
+	config = new_config
+	_connect()
+	
+	if not config["enabled"]:
+		client._disconnect()
+		return
+		
+
+func _connect():
+	if config["enabled"]:
+		client._connect_to_server(config["websocket_url"])
+
 func _ready():
-	# Fucking what?
 	add_child(client)
 	client.connect("device_found", self, "_set_device")
 	client.connect("device_removed", self, "_unset_device")
-	client._connect_to_server()
+	TackleBox.connect("mod_config_updated", self, "_on_config_update")
+	_init_config()
+	_connect()
 	
 func _process(_delta):
 	client._process(_delta)

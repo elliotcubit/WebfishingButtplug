@@ -1,7 +1,10 @@
 {
   "Id": "ButtPlugIO",
   "AssemblyPath": "ButtPlugIO.dll",
-    "PackPath": "ButtPlugIO.pck",
+  "PackPath": "ButtPlugIO.pck",
+  "Dependencies": [
+    "TackleBox"
+  ],
   "Metadata": {
     "Name": "Buttplug.io support for WEBFISHING",
     "Author": "Elliot Cubit",

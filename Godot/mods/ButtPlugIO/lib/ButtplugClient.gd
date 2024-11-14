@@ -2,7 +2,7 @@ extends Node
 
 const ButtplugDevice = preload("./ButtplugDevice.gd")
 
-export var websocket_url = "ws://127.0.0.1:12345"
+# export var websocket_url = "ws://127.0.0.1:12345"
 
 var _client = WebSocketClient.new()
 var connected = false
@@ -23,8 +23,13 @@ func _ready():
 	# Alternatively, you could check get_peer(1).get_available_packets() in a loop.
 	_client.connect("data_received", self, "_on_data")
 
-func _connect_to_server():
+func _disconnect():
 	if connected:
+		_client.disconnect_from_host()
+	
+func _connect_to_server(websocket_url):
+	if connected:
+		# Weird behavior
 		_client.disconnect_from_host()
 		return
 	print_debug("connecting to server at %s" % websocket_url)
