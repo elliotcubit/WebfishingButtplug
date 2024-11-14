@@ -1,0 +1,11 @@
+{
+  "Id": "ButtPlugIO",
+  "AssemblyPath": "ButtPlugIO.dll",
+    "PackPath": "ButtPlugIO.pck",
+  "Metadata": {
+    "Name": "Buttplug.io support for WEBFISHING",
+    "Author": "Elliot Cubit",
+    "Version": "1.0.0",
+    "Description": "What am I doing with my life?"
+  }
+}
