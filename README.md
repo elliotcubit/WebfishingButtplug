@@ -2,27 +2,49 @@
 
 This is a mod for [WEBFISHING](https://store.steampowered.com/app/3146520/WEBFISHING/) that adds basic [Buttplug.io](https://buttplug.io/) integration.
 
-## Dependencies
-
-The mod is loaded using [GDWeave](https://github.com/NotNite/GDWeave/tree/main).
-
-I used [Godot.Buttplug](https://github.com/erodozer/Godot.Buttplug) for the interesting bits, which is licensed under the MIT license and bundled into this package.
-
-The mod will connect to a Buttplug server, which will _most likely_ be [Intiface Central](https://docs.intiface.com/docs/intiface-central/quickstart/).
-See those docs for setup - they have extensive documentation. After the server is running, the game will connect to it via websockets on boot.
-
-## Installing
-
-
+I don't expect anyone to actually _use_ this, but I hope it's helpful to you regardless!
 
 ## Features
 
 - Vibrates at a base level while in the fishing minigame
 - Vibration intensity increases while mashing
 
+## Installing
+
+1. Install [Intiface Central](https://docs.intiface.com/docs/intiface-central/quickstart/).
+1. Install [GDWeave](https://github.com/NotNite/GDWeave/tree/main).
+1. Download the latest release and unzip it into your `GWWeave/mods` folder.
+1. Ensure Intiface Central is running.
+1. Start the game
+1. You're good to go!
+
+Your game files should look something like this, if things are installed correctly:
+
+```
+WEBFISHING /
+  webfishing.exe     // game files
+  steam_api64.dll    // game files
+  winmm.dll          // GDWEAVE dependency
+  GDWEAVE/
+    GDWeave.log      // Log output of modloader
+    configs/
+    core/
+    mods/
+      ButtPlugIO/    // The capitalization DOES matter!!
+        ButtPlugIO.dll
+        // ... and other files
+```
+
+## Dependencies
+
+The mod is loaded using [GDWeave](https://github.com/NotNite/GDWeave/tree/main).
+
+The mod will connect to a Buttplug server, which will _most likely_ be [Intiface Central](https://docs.intiface.com/docs/intiface-central/quickstart/).
+See those docs for setup - they have extensive documentation. After the server is running, the game will connect to it via websockets on boot.
+
 ## Licenses
 
-The following license is for Godot.Buttplug:
+The following license is for [Godot.Buttplug](https://github.com/erodozer/Godot.Buttplug), which I used for most of the interesting bits and bundled in here:
 
 MIT License
 
