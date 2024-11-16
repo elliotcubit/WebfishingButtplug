@@ -1,4 +1,10 @@
 
+# v1.3.0
+
+- Allow setting a base vibration level
+- Add vibration while completing scratch offs
+- Allow toggling individual vibration triggers
+
 # v1.2.0
 
 Allow configuration of vibration intensity.

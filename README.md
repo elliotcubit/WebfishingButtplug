@@ -4,8 +4,10 @@ This is a mod for [WEBFISHING](https://store.steampowered.com/app/3146520/WEBFIS
 
 ## Features
 
-- Vibrates at a base level while in the fishing minigame
+- Vibrates constantly at a configurable base intensity
+- Vibrates at a different base level while in the fishing minigame
 - Vibration intensity increases while mashing
+- Vibrates while completing scratch-off tickets
 
 ## Installing
 
@@ -50,6 +52,8 @@ ButtPlugIO uses [TackleBox](https://thunderstore.io/c/webfishing/p/PuppyGirl/Tac
 
 After installing TackleBox, you will see a new `Mods` option in your main menu. This option is also available while you are in-game!
 
+Note that these screenshots can only be viewed on [GitHub](https://github.com/elliotcubit/WebfishingButtplug), not thunderstore.
+
 ![Screenshot of mod menu item](./assets/menu.png)
 
 After opening it, find ButtPlugIO in the mods list. If you haven't installed other mods, it will be the only one.
@@ -57,6 +61,8 @@ After opening it, find ButtPlugIO in the mods list. If you haven't installed oth
 ![Screenshot of ButtPlugIO in the mods list](./assets/configure.png)
 
 There are a several options available. The mod can be disabled/enabled entirely, you can point it at a specific address for the server, and you can adjust the vibration settings.
+
+You can also toggle individual vibration triggers on or off via this menu - all features default to _off_.
 
 ![Screenshot of the options that are available in game](./assets/configuration_options.png)
 
