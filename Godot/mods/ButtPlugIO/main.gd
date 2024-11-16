@@ -5,7 +5,9 @@ const MOD_ID = "ButtPlugIO"
 var config: Dictionary
 var default_config: Dictionary = {
 	"enabled": true,
-	"websocket_url": "ws://127.0.0.1:12345"
+	"websocket_url": "ws://127.0.0.1:12345",
+	"reel_base_intensity": 0.05,
+	"yank_intensity_increase": 0.05,
 }
 
 onready var TackleBox := $"/root/TackleBox"
@@ -65,18 +67,16 @@ func _ready():
 func _process(_delta):
 	client._process(_delta)
 
-const baseStrength = 0.05;
-
 func _exit_tree():
 	print("exit tree")
 	
 func _yank_hook():
-	_set_strength(strength + 0.05)
+	_set_strength(strength + config["yank_intensity_increase"])
 
 func _reel_hook(reeling):
-	if strength >= baseStrength:
+	if strength >= config["reel_base_intensity"]:
 		return
-	_set_strength(baseStrength)
+	_set_strength(config["reel_base_intensity"])
 
 func _set_device(dv):
 	print("found device")
@@ -93,7 +93,7 @@ func _unset_device(dv):
 	goodToGo = false
 
 func _start_hook():
-	_set_strength(baseStrength)
+	_set_strength(config["reel_base_intensity"])
 
 func _set_strength(value):
 	if strength == value:
