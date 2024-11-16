@@ -6,6 +6,7 @@ var config: Dictionary
 var default_config: Dictionary = {
 	"enabled": true,
 	"websocket_url": "ws://127.0.0.1:12345",
+	"enable_fishing_buzz": false,
 	"reel_base_intensity": 0.05,
 	"yank_intensity_increase": 0.05,
 	"enable_scratch_buzz": false,
@@ -77,9 +78,13 @@ func _exit_tree():
 	print("exit tree")
 	
 func _yank_hook():
+	if not config["enable_fishing_buzz"]:
+		return
 	_set_strength(strength + config["yank_intensity_increase"])
 
 func _reel_hook(reeling):
+	if not config["enable_fishing_buzz"]:
+		return
 	if strength >= config["reel_base_intensity"]:
 		return
 	_set_strength(config["reel_base_intensity"])
