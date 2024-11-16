@@ -1,4 +1,8 @@
 
+# v1.2.0
+
+Allow configuration of vibration intensity.
+
 # v1.1.2
 
 No functional changes.

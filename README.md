@@ -2,8 +2,6 @@
 
 This is a mod for [WEBFISHING](https://store.steampowered.com/app/3146520/WEBFISHING/) that adds basic [Buttplug.io](https://buttplug.io/) integration.
 
-I don't expect anyone to actually _use_ this, but I hope it's helpful to you regardless!
-
 ## Features
 
 - Vibrates at a base level while in the fishing minigame
@@ -68,7 +66,7 @@ the numbers to get things working!
 ## Debugging
 
 This thing is a little buggy at this time. If it drops connection to the device (or to IC central), open the mod menu and try turning it off-and-on again.
-If no luck, please feel free to file a GitHub Issue!.
+If no luck, please feel free to file a GitHub Issue!
 
 ## Donations
 
