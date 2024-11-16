@@ -5,6 +5,7 @@ const MOD_ID = "ButtPlugIO"
 var config: Dictionary
 var default_config: Dictionary = {
 	"enabled": true,
+	"base_intensity": 0.0,
 	"websocket_url": "ws://127.0.0.1:12345",
 	"enable_fishing_buzz": false,
 	"reel_base_intensity": 0.05,
@@ -55,7 +56,6 @@ func _on_config_update(mod_id: String, new_config: Dictionary):
 	if not config["enabled"]:
 		client._disconnect()
 		return
-		
 
 func _connect():
 	if config["enabled"]:
@@ -93,6 +93,7 @@ func _set_device(dv):
 	print("found device")
 	device = dv
 	goodToGo = true
+	_set_strength(config["base_intensity"])
 
 func _unset_device(dv):
 	# This is really stupid, but it works well enough
@@ -107,7 +108,7 @@ func _start_hook():
 	_set_strength(config["reel_base_intensity"])
 
 func _done_scratching():
-	_set_strength(0)
+	_set_strength(config["base_intensity"])
 
 func _scratch():
 	if not config["enable_scratch_buzz"]:
@@ -125,4 +126,4 @@ func _set_strength(value):
 		device.do_vibrate(strength, -1)
 
 func _end_hook():
-	_set_strength(0)
+	_set_strength(config["base_intensity"])
