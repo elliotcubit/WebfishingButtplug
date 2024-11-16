@@ -42,6 +42,10 @@ The mod is loaded using [GDWeave](https://github.com/NotNite/GDWeave/tree/main).
 The mod will connect to a Buttplug server, which will _most likely_ be [Intiface Central](https://docs.intiface.com/docs/intiface-central/quickstart/).
 See those docs for setup - they have extensive documentation. After the server is running, the game will connect to it via websockets on boot.
 
+## Donations
+
+If you want to compensate me for this work (please do not feel like you need to do this), please consider donating to [The Trevor Project](https://give.thetrevorproject.org/give/63307/#!/donation/checkout) or [The ACLU](https://action.aclu.org/give/now).
+
 ## Licenses
 
 The following license is for [Godot.Buttplug](https://github.com/erodozer/Godot.Buttplug), which I used for most of the interesting bits and bundled in here:
