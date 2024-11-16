@@ -13,6 +13,7 @@ I don't expect anyone to actually _use_ this, but I hope it's helpful to you reg
 
 1. Install [Intiface Central](https://docs.intiface.com/docs/intiface-central/quickstart/).
 1. Install [GDWeave](https://github.com/NotNite/GDWeave/tree/main).
+1. Install [TackleBox](https://github.com/puppy-girl/TackleBox/).
 1. Download the latest release and unzip it into your `GWWeave/mods` folder.
 1. Ensure Intiface Central is running.
 1. Start the game
@@ -38,6 +39,8 @@ WEBFISHING /
 ## Dependencies
 
 The mod is loaded using [GDWeave](https://github.com/NotNite/GDWeave/tree/main).
+
+It depends also on [TackleBox](https://thunderstore.io/c/webfishing/p/PuppyGirl/TackleBox/), which is used to configure the mod in-game.
 
 The mod will connect to a Buttplug server, which will _most likely_ be [Intiface Central](https://docs.intiface.com/docs/intiface-central/quickstart/).
 See those docs for setup - they have extensive documentation. After the server is running, the game will connect to it via websockets on boot.
