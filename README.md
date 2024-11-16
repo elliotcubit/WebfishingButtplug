@@ -45,6 +45,11 @@ It depends also on [TackleBox](https://thunderstore.io/c/webfishing/p/PuppyGirl/
 The mod will connect to a Buttplug server, which will _most likely_ be [Intiface Central](https://docs.intiface.com/docs/intiface-central/quickstart/).
 See those docs for setup - they have extensive documentation. After the server is running, the game will connect to it via websockets on boot.
 
+## Debugging
+
+This thing is a little buggy at this time. If it drops connection to the device (or to IC central), open the mod menu and try turning it off-and-on again.
+If no luck, please feel free to file a GitHub Issue!.
+
 ## Donations
 
 If you want to compensate me for this work (please do not feel like you need to do this), please consider donating to [The Trevor Project](https://give.thetrevorproject.org/give/63307/#!/donation/checkout) or [The ACLU](https://action.aclu.org/give/now).
