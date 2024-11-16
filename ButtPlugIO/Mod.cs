@@ -9,6 +9,8 @@ public class Mod : IMod {
 
         modInterface.Logger.Information("Injecting fishing hooks");
         modInterface.RegisterScriptMod(new FishingInject(modInterface));
+        modInterface.Logger.Information("Injecting scratch-off hooks");
+        modInterface.RegisterScriptMod(new ScratchOffInject(modInterface));
     }
 
     public void Dispose() {

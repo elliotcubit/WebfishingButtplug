@@ -8,6 +8,9 @@ var default_config: Dictionary = {
 	"websocket_url": "ws://127.0.0.1:12345",
 	"reel_base_intensity": 0.05,
 	"yank_intensity_increase": 0.05,
+	"enable_scratch_buzz": false,
+	"scratch_intensity": 0.25,
+	"scratch_buzz_time": 1,
 }
 
 onready var TackleBox := $"/root/TackleBox"
@@ -17,6 +20,7 @@ var client = Client.new()
 var strength = 0;
 var device = "startingval"
 var goodToGo = false
+var scratch_timer = Timer.new()
 
 func _init_config():
 	var saved_config = TackleBox.get_mod_config(MOD_ID)
@@ -57,10 +61,12 @@ func _connect():
 		client._connect_to_server(config["websocket_url"])
 
 func _ready():
+	add_child(scratch_timer)
 	add_child(client)
 	client.connect("device_found", self, "_set_device")
 	client.connect("device_removed", self, "_unset_device")
 	TackleBox.connect("mod_config_updated", self, "_on_config_update")
+	scratch_timer.connect("timeout", self, "_done_scratching")
 	_init_config()
 	_connect()
 	
@@ -94,6 +100,15 @@ func _unset_device(dv):
 
 func _start_hook():
 	_set_strength(config["reel_base_intensity"])
+
+func _done_scratching():
+	_set_strength(0)
+
+func _scratch():
+	if not config["enable_scratch_buzz"]:
+		return
+	_set_strength(config["scratch_intensity"])
+	scratch_timer.start(config["scratch_buzz_time"])
 
 func _set_strength(value):
 	if strength == value:
