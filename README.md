@@ -50,15 +50,15 @@ ButtPlugIO uses [TackleBox](https://thunderstore.io/c/webfishing/p/PuppyGirl/Tac
 
 After installing TackleBox, you will see a new `Mods` option in your main menu. This option is also available while you are in-game!
 
-[Screenshot of mod menu item](./assets/menu.png)
+![Screenshot of mod menu item](./assets/menu.png)
 
 After opening it, find ButtPlugIO in the mods list. If you haven't installed other mods, it will be the only one.
 
-[Screenshot of ButtPlugIO in the mods list](./assets/configure.png)
+![Screenshot of ButtPlugIO in the mods list](./assets/configure.png)
 
 There are a several options available. The mod can be disabled/enabled entirely, you can point it at a specific address for the server, and you can adjust the vibration settings.
 
-[Screenshot of the options that are available in game](./assets/configuration_options.png)
+![Screenshot of the options that are available in game](./assets/configuration_options.png)
 
 The valeus for vibration intensity and step are expressed in _decimal percentages_. This is standard for ButtPlugIO, but might be unintuitive. This means that a value of `0.05` (the default) means that the vibration intensity will be 5% of the total available. Devices general support differing levels of granularity here, so you may have to play with
 the numbers to get things working!
