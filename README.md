@@ -66,7 +66,7 @@ You can also toggle individual vibration triggers on or off via this menu - all 
 
 ![Screenshot of the options that are available in game](./assets/configuration_options.png)
 
-The valeus for vibration intensity and step are expressed in _decimal percentages_. This is standard for ButtPlugIO, but might be unintuitive. This means that a value of `0.05` (the default) means that the vibration intensity will be 5% of the total available. Devices general support differing levels of granularity here, so you may have to play with
+The values for vibration intensity and step are expressed in _decimal percentages_. This is standard for ButtPlugIO, but might be unintuitive. This means that a value of `0.05` (the default) means that the vibration intensity will be 5% of the total available. Devices general support differing levels of granularity here, so you may have to play with
 the numbers to get things working!
 
 ## Debugging
